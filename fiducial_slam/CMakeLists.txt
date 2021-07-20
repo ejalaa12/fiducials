@@ -51,6 +51,13 @@ add_dependencies(fiducial_slam ${${PROJECT_NAME}_EXPORTED_TARGETS}
 
 target_link_libraries(fiducial_slam ${catkin_LIBRARIES} ${OpenCV_LIBS})
 
+add_executable(fiducial_map_posit src/fiducial_map_posit.cpp
+               src/map.cpp src/transform_with_variance.cpp)
+add_dependencies(fiducial_map_posit ${${PROJECT_NAME}_EXPORTED_TARGETS}
+                 ${catkin_EXPORTED_TARGETS})
+
+target_link_libraries(fiducial_map_posit ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
 #############
 ## Install ##
 #############

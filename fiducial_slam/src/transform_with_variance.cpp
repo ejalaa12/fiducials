@@ -73,7 +73,7 @@ void TransformWithVariance::update(const TransformWithVariance& newT) {
     double mean2 = (p2 - p1).length();
     double mean = (transform.getOrigin() - p1).length();
 
-    // Normalize the variances so that the area under the probabilty remains 1
+    // Normalize the variances so that the area under the probability remains 1
     variance = normalizeDavid(mean, mean1, var1, mean2, var2);
 }
 

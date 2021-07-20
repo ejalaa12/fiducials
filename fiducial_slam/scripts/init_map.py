@@ -10,7 +10,7 @@ import sys, os
 if __name__ == "__main__":
     argc = len(sys.argv)
     if argc < 2 or argc > 3:
-        print "Usage:  %s fiducial_id [map_file]" % sys.argv[0]
+        print("Usage:  %s fiducial_id [map_file]" % sys.argv[0])
         sys.exit(1)
 
     fid = int(sys.argv[1])
@@ -23,10 +23,10 @@ if __name__ == "__main__":
     if dir and not os.path.exists(dir):
         os.makedirs(dir)
     if os.path.exists(map_file):
-        print "File %s already exists, remove or rename it first" % map_file
+        print("File %s already exists, remove or rename it first" % map_file)
         sys.exit(1)
 
     file = open(map_file, "w")
     file.write("%d 0.0 0.0 0.0 180.0 0 180.0 0 1\n" % fid)
     file.close()
-    print "Map file %s created with fiducial %d" % (map_file, fid)
+    print("Map file %s created with fiducial %d" % (map_file, fid))
